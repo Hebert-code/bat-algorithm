@@ -1,51 +1,54 @@
-# Bat Algorithm – Python Implementation
+# Algoritmo do Morcego (Bat Algorithm) – Implementação em Python
 
-This repository contains an implementation of the **Bat Algorithm**, a nature-inspired metaheuristic proposed by Xin-She Yang, based on the echolocation behavior of bats.
+Este repositório contém uma implementação do **Algoritmo do Morcego (Bat Algorithm)**, uma meta-heurística inspirada no comportamento de **ecolocalização dos morcegos**, proposta por **Xin-She Yang**.
 
-The algorithm is applied to solve **global optimization problems**, and this implementation uses the **Rastrigin function** as a benchmark due to its multimodal characteristics.
+O algoritmo pertence à área de **Inteligência de Enxame** e é utilizado para resolver **problemas de otimização global**, especialmente aqueles com muitos mínimos locais.
 
----
-
-## 📌 Algorithm Overview
-
-- Population-based metaheuristic
-- Inspired by bat echolocation
-- Balances **exploration** and **exploitation**
-- Uses parameters such as:
-  - Frequency
-  - Loudness
-  - Pulse rate
+Este projeto foi desenvolvido com fins **acadêmicos**, como parte de um seminário da disciplina de **Inteligência Artificial**.
 
 ---
 
-## 🧪 Test Function
+## 📌 Descrição do Algoritmo
 
-The algorithm was tested using the **Rastrigin function**, defined as:
+O Algoritmo do Morcego simula o comportamento de um grupo de morcegos em busca de alimento no escuro, onde:
 
-\[
-f(x) = 10n + \sum_{i=1}^{n} \left[x_i^2 - 10\cos(2\pi x_i)\right]
-\]
+- Cada morcego representa uma **solução candidata**
+- A posição do morcego representa uma solução no espaço de busca
+- O melhor morcego encontrado representa a **melhor solução global**
+- O algoritmo equilibra **exploração** e **refinamento** por meio dos parâmetros:
+  - Frequência
+  - Loudness (volume)
+  - Taxa de pulso
 
-The global minimum is located at:
-
-\[
-x = (0, 0, ..., 0), \quad f(x) = 0
-\]
-
----
-
-## ⚙️ Parameters Used
-
-- Population size: 40 bats
-- Maximum iterations: 150
-- Frequency range: [0.0, 2.0]
-- Loudness (initial): 1.0
-- Pulse rate (initial): 0.1
+Trata-se de uma **meta-heurística estocástica**, ou seja, não garante encontrar o ótimo exato, mas busca soluções muito próximas do ótimo global de forma eficiente.
 
 ---
 
-## ▶️ How to Run
+## ⚙️ Hiperparâmetros Utilizados
 
-1. Clone the repository:
+Na implementação apresentada, foram utilizados os seguintes parâmetros:
+
+- Tamanho da população: **40 morcegos**
+- Número máximo de iterações: **150**
+- Frequência mínima: **0.0**
+- Frequência máxima: **2.0**
+- Loudness inicial (A₀): **1.0**
+- Taxa de pulso inicial (r₀): **0.1**
+
+Esses parâmetros controlam o comportamento do algoritmo ao longo das iterações, regulando o equilíbrio entre exploração do espaço de busca e refinamento da solução.
+
+---
+
+## 🧪 Função Objetivo – Rastrigin
+
+O algoritmo foi testado utilizando a **Função Rastrigin**, um problema clássico de otimização multimodal, conhecido por possuir diversos mínimos locais.
+
+A escolha dessa função permite avaliar a capacidade do algoritmo de **escapar de mínimos locais**.
+
+---
+
+## ▶️ Como Executar o Algoritmo
+
+### 1. Clonar o repositório
 ```bash
 git clone https://github.com/SEU_USUARIO/bat-algorithm.git
